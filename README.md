@@ -15,19 +15,19 @@ Atlas is, at its core, a central brain for your robot. Using the API, you'll sen
 
 Go to **/users/sign_up** and fill out the form.
 
-![Sign Up page](http://tinypic.com/r/2ltitrr/6)
+![Sign Up page](http://i45.tinypic.com/2ltitrr.jpg)
 
 2. Generate an App ID and Secret
 
 Click the Account link in the header, or go to **/account**.
 
-![Account link](http://tinypic.com/r/azb0cm/6)
+![Account link](http://i47.tinypic.com/azb0cm.jpg)
 
 Click **Manage my applications**, then **New application**.
 
 Now name your application whatever you'd like. Since we'll be developing this tutorial on the Atlas website, we'll set the Redirect URI to be **urn:ietf:wg:oauth:2.0:oob**. If you were developing your own interface for testing or visualizations, you could replace the Redirect URI with your own domain.
 
-![New application](http://tinypic.com/r/34ybs5g/6)
+![New application](http://i47.tinypic.com/34ybs5g.jpg)
 
 3. Generate an Access Token
 
@@ -37,15 +37,15 @@ Follow the link to authorize the app by clicking **Authorize**, then hit the **A
 
     irb -r oauth2
     callback = '…'
-  	app_id = '…'
-		secret = '…'
-		auth_code = '…'
+    app_id = '…'
+    secret = '…'
+    auth_code = '…'
     
-		client = OAuth2::Client.new(app_id, secret, site: "http://tann.la")
-		client.auth_code.authorize_url(redirect_uri: callback) # Generate authorization URL, if you haven't authorized your app, yet
+    client = OAuth2::Client.new(app_id, secret, site: "http://tann.la")
+    client.auth_code.authorize_url(redirect_uri: callback) # Generate authorization URL, if you haven't authorized your app, yet
     access = client.auth_code.get_token(auth_code, redirect_uri: callback)
     
-		access.token # => "1cb2d5226e3ffba323asd821jo0f7e78a8"
+    access.token # => "1cb2d5226e3ffba323asd821jo0f7e78a8"
 
 #### Python
 
@@ -57,7 +57,7 @@ Coming soon.
 
 Once you have your access token, go back to your **Dashboard** and **Create a New Robot**.
 
-![New robot](http://tinypic.com/r/2z8ng52/6)
+![New robot](http://i50.tinypic.com/2z8ng52.jpg)
 
 ## Interfacing with the RESTful API
 
