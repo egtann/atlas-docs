@@ -71,7 +71,13 @@ Pass in your access token for every request, e.g.
 
 :id is the robot's id, which you can find under Robot Details on its page.
 
-### Send sensor data
+### Get sensor readings
+
+    GET /api/robots/:id/readings/
+    
+Useful for doing custom visualizations with your robot's data.
+
+### Send sensor readings
 
     POST /api/robots/:id/readings/
 
@@ -82,6 +88,16 @@ Sample Data:
       "sensor" : "range",
       "reading" : 50
     }
+    
+### Get past actions
+
+    GET /api/robots/:id/actions
+    
+Useful for building a custom robot training interface.
+
+### Train an action
+
+    PUT /api/robots/:robot_id/actions/:id
 
 ### Get a new action recommendation
 
