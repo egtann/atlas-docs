@@ -1,15 +1,13 @@
 Atlas Documentation
 ==========
 
-## Getting Started
-
 This will walk you through the basics of Atlas and guide you through creating your first Atlas robot.
 
-### How it works
+## How it works
 
 Atlas is, at its core, a central brain for your robot. Using the API, you'll send sensor readings to Atlas, we'll process the data and send back actions to be performed based on your robot's capabilities. The actions will be high-level; for instance, if the sensors detect that you're moving quickly toward a wall, we'll tell your robot to turn 45° and avoid the wall. Then your robot can interpret the action given its onboard software (ROS, Arduino, etc.) and hardware.
 
-### Step-by-Step Guide
+## Step-by-Step Guide
 
 **Step 1.** Create an Account
 
@@ -33,7 +31,7 @@ Now name your application whatever you'd like. Since we'll be developing this tu
 
 Follow the link to authorize the app by clicking **Authorize**, then hit the **Authorize button**. Grab the Authorization Code, and follow the guide for your language of choice to generate a token.
 
-#### Ruby
+### Ruby
 
     irb -r oauth2
     callback = '…'
@@ -47,11 +45,11 @@ Follow the link to authorize the app by clicking **Authorize**, then hit the **A
     
     access.token # => "1cb2d5226e3ffba323asd821jo0f7e78a8"
 
-#### Python
+### Python
 
 Coming soon.
 
-#### C++
+### C++
 
 Coming soon.
 
