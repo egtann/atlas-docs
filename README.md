@@ -11,13 +11,13 @@ Atlas is, at its core, a central brain for your robot. Using the API, you'll sen
 
 **Step 1.** Create an Account
 
-Go to **/users/sign_up** and fill out the form.
+Go to [**/users/sign_up**](http://tann.la/users/sign_up) and fill out the form.
 
 ![Sign Up page](http://i45.tinypic.com/2ltitrr.jpg)
 
 **Step 2.** Generate an App ID and Secret
 
-Click the Account link in the header, or go to **/account**.
+After signing in, click the Account link in the header, or go to [**/account**](http://tann.la/account).
 
 ![Account link](http://i47.tinypic.com/azb0cm.jpg)
 
@@ -29,19 +29,17 @@ Now name your application whatever you'd like. Since we'll be developing this tu
 
 **Step 3.** Generate an Access Token
 
-Follow the link to authorize the app by clicking **Authorize**, then hit the **Authorize button**. Grab the Authorization Code, and follow the guide for your language of choice to generate a token.
-
 ### Ruby
 
     irb -r oauth2
-    callback = '…'
+    redirect_uri = '…'
     app_id = '…'
     secret = '…'
-    auth_code = '…'
+    auth_code = '…' # from authorizing the app
     
     client = OAuth2::Client.new(app_id, secret, site: "http://tann.la")
-    client.auth_code.authorize_url(redirect_uri: callback) # Generate authorization URL, if you haven't authorized your app, yet
-    access = client.auth_code.get_token(auth_code, redirect_uri: callback)
+    client.auth_code.authorize_url(redirect_uri: redirect_uri) # Generate authorization URL, if you haven't authorized your app, yet
+    access = client.auth_code.get_token(auth_code, redirect_uri: redirect_uri)
     
     access.token # => "1cb2d5226e3ffba323asd821jo0f7e78a8"
 
@@ -53,7 +51,7 @@ Coming soon.
 
 Coming soon.
 
-Once you have your access token, go back to your **Dashboard** and **Create a New Robot**.
+Once you have your access token, go back to your [**Dashboard**](http://tann.la/dashboard) and [**Create a New Robot**](http://tann.la/robots/new).
 
 ![New robot](http://i50.tinypic.com/2z8ng52.jpg)
 
@@ -65,17 +63,19 @@ Pass in your access token for every request, e.g.
 
 ### View All Robots
 
-GET /api/robots
+    GET /api/robots
 
 ### View a single robot
 
-GET /api/robots/:id
+    GET /api/robots/:id
 
-    "id" : "ak18uasjnaknca281"
+:id is the robot's id, which you can find under Robot Details on its page.
 
 ### Send sensor data
 
-POST /api/robots/:id/readings/
+    POST /api/robots/:id/readings/
+
+Sample Data:
 
     "id" : "ak18uasjnaknca281",
     "reading" : {
@@ -85,16 +85,14 @@ POST /api/robots/:id/readings/
 
 ### Get a new action recommendation
 
-GET /api/robots/:id/actions/new
-
-    "id" : "ak18uasjnaknca281"
+    GET /api/robots/:id/actions/new
 
 The recommended action is based on past sensor data for the robot.
 
 ### Get existing capabilities
 
-GET /api/capabilities
+    GET /api/capabilities
 
 ### Get user information
 
-GET /api/user
+    GET /api/user
