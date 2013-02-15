@@ -11,13 +11,13 @@ Atlas is, at its core, a central brain for your robot. Using the API, you'll sen
 
 ### Step-by-Step Guide
 
-1. Create an Account
+**Step 1.** Create an Account
 
 Go to **/users/sign_up** and fill out the form.
 
 ![Sign Up page](http://i45.tinypic.com/2ltitrr.jpg)
 
-2. Generate an App ID and Secret
+**Step 2.** Generate an App ID and Secret
 
 Click the Account link in the header, or go to **/account**.
 
@@ -29,7 +29,7 @@ Now name your application whatever you'd like. Since we'll be developing this tu
 
 ![New application](http://i47.tinypic.com/34ybs5g.jpg)
 
-3. Generate an Access Token
+**Step 3.** Generate an Access Token
 
 Follow the link to authorize the app by clicking **Authorize**, then hit the **Authorize button**. Grab the Authorization Code, and follow the guide for your language of choice to generate a token.
 
