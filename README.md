@@ -89,11 +89,7 @@ GET /api/robots/:id/actions/new
 
     "id" : "ak18uasjnaknca281"
 
-The recommended action is based on past sensor data.
-
-Right now, this requires you to specify a sensor range. *This will no longer require a sensor_range to be passed in, soon.*
-
-    "sensor_range" : "0..1023"
+The recommended action is based on past sensor data for the robot.
 
 ### Get existing capabilities
 
